@@ -1,3 +1,3 @@
 # sordamente.github.io
 
-My homepage (still in the works)
+A homepage for all my projects (not finished owo)
