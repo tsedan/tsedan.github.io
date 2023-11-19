@@ -11,21 +11,18 @@ body {
   left: 50%;
   transform: translate(-50%, 0);
 
-  width: 92vmin;
-  height: 276vmin;
   padding: 1rem;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid: repeat(6, 12rem) / repeat(2, 12rem);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 50rem) {
   .main {
     top: 50%;
     transform: translate(-50%, -50%);
 
-    height: 69vmin;
-    grid-template-columns: repeat(4, 1fr);
+    grid: repeat(3, 12rem) / repeat(4, 12rem);
   }
 }
 
