@@ -28,7 +28,7 @@ body {
   grid: repeat(6, 12em) / repeat(2, 12em);
 }
 
-@media (min-width: 50em) {
+@media (min-width: 1000px) {
   .main {
     top: 50%;
     transform: translate(-50%, -50%);
