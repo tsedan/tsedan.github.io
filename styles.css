@@ -20,12 +20,8 @@ body {
   color: white;
 
   overscroll-behavior: contain;
-}
 
-@media (max-width: 1000px) {
-  body {
-    font-size: calc(100vw / 26);
-  }
+  font-size: calc(100vw / 26);
 }
 
 .main {
@@ -40,6 +36,10 @@ body {
 }
 
 @media (min-width: 1000px) {
+  body {
+    font-size: 1rem;
+  }
+
   .main {
     top: 50%;
     transform: translate(-50%, -50%);
@@ -51,11 +51,11 @@ body {
 .card {
   position: relative;
 
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
-  border: .45em solid rgba(0, 0, 0, 0.3);
+  border: .4em solid rgba(255, 255, 255, 0.05);
 
   border-radius: 1.5em;
   padding: 2em;
