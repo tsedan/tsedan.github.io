@@ -17,12 +17,18 @@ body {
   color: white;
 }
 
+@media (max-width: 1000px) {
+  body {
+    font-size: calc(100vw / 26);
+  }
+}
+
 .main {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
 
-  padding: 1em;
+  padding: 1em 0;
 
   display: grid;
   grid: repeat(6, 12em) / repeat(2, 12em);
@@ -38,15 +44,18 @@ body {
 }
 
 .card {
+  position: relative;
+
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 
   border-radius: 1em;
   padding: 1.5em;
   margin: .5em;
 
-  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 }
 
 .wide {
@@ -68,7 +77,7 @@ body {
 
   position: absolute;
   top: 50%;
-  right: 1.5rem;
+  right: 1.5em;
   transform: translate(0, -50%);
 }
 
