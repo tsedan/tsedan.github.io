@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
 
-  background-image: url("bg.jpg");
+  background-image: url("assets/bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -37,7 +37,7 @@ body {
 
 @media (min-width: 1000px) {
   body {
-    font-size: 1rem;
+    font-size: calc(100vmin / 48);
   }
 
   .main {
@@ -62,23 +62,18 @@ body {
   margin: .5em;
 
   transition: transform .2s;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.02, 1.02);
-  }
 }
 
-.btn {
+.card:hover {
+  transform: scale(1.02, 1.02);
+}
 
-  &:hover,
-  &:focus {
-    cursor: pointer;
-  }
+.btn:hover {
+  cursor: pointer;
+}
 
-  &:active {
-    transform: scale(0.9, 0.9);
-  }
+.btn:active {
+  transform: scale(0.9, 0.9);
 }
 
 .wide {
