@@ -19,8 +19,6 @@ body {
   font-family: 'Nanum Myeongjo', serif;
   color: white;
 
-  overscroll-behavior: contain;
-
   font-size: calc(100vw / 26);
 }
 
@@ -60,12 +58,6 @@ body {
   border-radius: 1.5em;
   padding: 2em;
   margin: .5em;
-
-  transition: transform .2s;
-}
-
-.card:hover {
-  transform: scale(1.02, 1.02);
 }
 
 .wide {
@@ -102,4 +94,14 @@ p {
 h2 {
   margin-top: 0;
   margin-bottom: 1em;
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 5em;
+  fill: white;
 }
