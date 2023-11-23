@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;800&display=swap');
 
+:root {
+  --pad: 1.5em;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +34,7 @@ body {
   left: 50%;
   transform: translate(-50%, 0);
 
-  padding: 1em 0;
+  padding: var(--pad) 0;
 
   display: grid;
   grid: repeat(6, 12em) / repeat(2, 12em);
@@ -59,8 +63,10 @@ body {
   border: .4em solid rgba(255, 255, 255, 0.05);
 
   border-radius: 1.5em;
-  padding: 2em;
+  padding: var(--pad);
   margin: .5em;
+
+  text-align: justify;
 }
 
 .wide {
@@ -80,7 +86,7 @@ body {
 .namediv {
   position: absolute;
   top: 50%;
-  right: 2em;
+  right: var(--pad);
   transform: translate(0, -50%);
 
   text-align: right;
@@ -96,8 +102,8 @@ body {
 
 .linkname {
   position: absolute;
-  bottom: 2em;
-  left: 2em;
+  bottom: var(--pad);
+  left: var(--pad);
 }
 
 svg {
