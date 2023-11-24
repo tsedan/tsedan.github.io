@@ -2,6 +2,7 @@
 
 :root {
   --pad: 1.5em;
+  --del: .2s;
 }
 
 * {
@@ -69,11 +70,42 @@ body:before {
 
   text-align: justify;
 
-  transition: transform .2s;
+  animation: dropIn 1s both;
 }
 
-.card:hover {
-  transform: scale(1.02, 1.02);
+.main .card:nth-child(1) {
+  animation-delay: calc(var(--del) * 0);
+}
+
+.main .card:nth-child(2) {
+  animation-delay: calc(var(--del) * 1);
+}
+
+.main .card:nth-child(3) {
+  animation-delay: calc(var(--del) * 2);
+}
+
+.main .card:nth-child(4) {
+  animation-delay: calc(var(--del) * 3);
+}
+
+.main .card:nth-child(5) {
+  animation-delay: calc(var(--del) * 4);
+}
+
+.main .card:nth-child(6) {
+  animation-delay: calc(var(--del) * 5);
+}
+
+.main .card:nth-child(7) {
+  animation-delay: calc(var(--del) * 6);
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translate(0, -3em);
+  }
 }
 
 .wide {
