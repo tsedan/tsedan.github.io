@@ -13,20 +13,18 @@
 
 html {
   color-scheme: dark;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-
-  background-image: url("assets/bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
 
   font-family: 'Nanum Myeongjo', serif;
   font-size: calc(100vw / 26);
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  background: no-repeat fixed center/cover url("assets/bg.jpg");
 }
 
 .main {
