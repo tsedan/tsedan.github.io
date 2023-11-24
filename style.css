@@ -160,9 +160,19 @@ body:before {
   text-align: right;
 }
 
+.top-right {
+  position: absolute;
+  top: var(--pad);
+  right: var(--pad);
+}
+
 svg {
   fill: var(--col);
   width: 2em;
+}
+
+.small {
+  width: 1em;
 }
 
 h1 {
