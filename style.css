@@ -1,34 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;800&display=swap');
 
-:root {
-  /* standard padding throughout page */
-  --pad: 1.5em;
+html {
+  /* theme coloring */
+  color-scheme: dark;
+  --col: #f0f0f0;
 
-  /* animation delay per grid card */
+  /* standard padding throughout page */
+  --mul: 1.5;
+  --pad: calc(var(--mul) * 1em);
+
+  /* dropIn animation delay per grid card */
   --del: .2s;
 
-  /* font and icon color */
-  --col: #f0f0f0;
-}
+  /* grid sizing */
+  --blk: 11;
+  --grd: calc(var(--blk) * 1em);
 
-* {
-  margin: 0;
-  padding: 0;
+  /* column count */
+  --clm: 4;
 
-  color: var(--col);
-}
-
-html {
-  color-scheme: dark;
-
+  /* 1em = minimum dimension, divided by (space taken by grid plus padding) */
+  font-size: calc(100vmin / (var(--blk) * var(--clm) + 2 * var(--mul)));
   font-family: 'Nanum Myeongjo', serif;
-  font-size: calc(100vw / 26);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body:before {
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--col);
+}
+
+/* non-scrolling background image */
+body::before {
   content: "";
   position: fixed;
   width: 100vw;
@@ -36,49 +42,56 @@ body:before {
   top: 0;
   left: 0;
 
-  background: no-repeat top/cover url("assets/bg.jpg");
+  background: no-repeat center/cover url("assets/bg.jpg");
 }
 
 .main {
+  display: grid;
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
-
+  transform: translate(-50%, -50%);
   padding: var(--pad) 0;
 
-  display: grid;
-  grid: repeat(6, 12em) / repeat(2, 12em);
+  /* automatic rows, with number of columns dependent on screen size */
+  grid: auto-flow var(--grd) / repeat(var(--clm), var(--grd));
+  grid-gap: 1em;
 }
 
-@media (min-width: 1000px) {
+/* mobile devices */
+@media (max-width: 1000px) {
   html {
-    font-size: calc(100vmin / 48);
+    --clm: 2;
   }
 
   .main {
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    grid: repeat(3, 12em) / repeat(4, 12em);
+    top: 0;
+    transform: translate(-50%, 0);
   }
 }
 
 .card {
   position: relative;
+  padding: var(--pad);
 
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
   border: .4em solid rgba(255, 255, 255, 0.04);
-
   border-radius: 1.5em;
-  padding: var(--pad);
-  margin: .5em;
 
   text-align: justify;
 
   animation: dropIn 1s both;
+}
+
+.wide {
+  grid-column-end: span 2;
+}
+
+.tall {
+  grid-row-end: span 2;
 }
 
 .main .card:nth-child(1) {
@@ -116,12 +129,13 @@ body:before {
   }
 }
 
-.wide {
-  grid-column-end: span 2;
+h1 {
+  font-size: 1.5em;
 }
 
-.tall {
-  grid-row-end: span 2;
+svg {
+  fill: var(--col);
+  width: 2em;
 }
 
 .profile {
@@ -130,21 +144,19 @@ body:before {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.namediv {
+.normal {
+  font-weight: 400;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.center-right {
   position: absolute;
   top: 50%;
   right: var(--pad);
   transform: translate(0, -50%);
-
-  text-align: right;
-}
-
-.m1 {
-  margin-bottom: 1em;
-}
-
-.w400 {
-  font-weight: 400;
 }
 
 .bottom-left {
@@ -157,7 +169,6 @@ body:before {
   position: absolute;
   bottom: var(--pad);
   right: var(--pad);
-  text-align: right;
 }
 
 .top-right {
@@ -166,15 +177,6 @@ body:before {
   right: var(--pad);
 }
 
-svg {
-  fill: var(--col);
-  width: 2em;
-}
-
 .small {
   width: 1em;
-}
-
-h1 {
-  font-size: 1.5em;
 }
