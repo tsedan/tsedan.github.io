@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;800&display=swap');
 
 :root {
+  /* standard padding throughout page */
   --pad: 1.5em;
+
+  /* animation delay per grid card */
   --del: .2s;
+
+  /* font and icon color */
   --col: #f0f0f0;
 }
 
@@ -26,8 +31,8 @@ html {
 body:before {
   content: "";
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 120vw;
+  height: 120vh;
   top: 0;
   left: 0;
 
@@ -107,7 +112,7 @@ body:before {
 @keyframes dropIn {
   0% {
     opacity: 0;
-    transform: translate(0, -3em);
+    transform: translate(0, -3.5em);
   }
 }
 
@@ -158,4 +163,8 @@ body:before {
 svg {
   fill: var(--col);
   width: 2em;
+}
+
+h1 {
+  font-size: 1.5em;
 }
