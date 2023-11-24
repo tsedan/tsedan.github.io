@@ -3,13 +3,14 @@
 :root {
   --pad: 1.5em;
   --del: .2s;
+  --col: #f0f0f0;
 }
 
 * {
   margin: 0;
   padding: 0;
 
-  color: white;
+  color: var(--col);
 }
 
 html {
@@ -45,7 +46,7 @@ body:before {
 }
 
 @media (min-width: 1000px) {
-  body {
+  html {
     font-size: calc(100vmin / 48);
   }
 
@@ -64,7 +65,7 @@ body:before {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
-  border: .4em solid rgba(255, 255, 255, 0.05);
+  border: .4em solid rgba(255, 255, 255, 0.04);
 
   border-radius: 1.5em;
   padding: var(--pad);
@@ -155,6 +156,6 @@ body:before {
 }
 
 svg {
-  fill: white;
+  fill: var(--col);
   width: 2em;
 }
