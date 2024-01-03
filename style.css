@@ -45,6 +45,42 @@ body::before {
   background: no-repeat center/cover url("assets/bg.jpg");
 }
 
+.pad {
+  padding: var(--pad);
+}
+
+.pad-third {
+  padding: calc(var(--pad) / 3);
+}
+
+.space-left {
+  margin-left: calc(var(--pad) / 3);
+}
+
+.space-right {
+  margin-right: calc(var(--pad) / 3);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 2em;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
 .main {
   display: grid;
   position: absolute;
@@ -65,25 +101,21 @@ body::before {
   }
 
   .main {
+    /*top: 2em;*/
     top: 0;
     transform: translate(-50%, 0);
   }
 }
 
 .card {
-  position: relative;
-  padding: var(--pad);
-
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
-  border: .4em solid rgba(255, 255, 255, 0.04);
-  border-radius: 1.5em;
+  border: .3em solid rgba(255, 255, 255, 0.04);
+  border-radius: .75em;
 
   text-align: justify;
-
-  animation: dropIn 1s both;
 }
 
 .wide {
@@ -94,32 +126,36 @@ body::before {
   grid-row-end: span 2;
 }
 
-.main .card:nth-child(1) {
+.main .drop:nth-child(1) {
   animation-delay: calc(var(--del) * 0);
 }
 
-.main .card:nth-child(2) {
+.main .drop:nth-child(2) {
   animation-delay: calc(var(--del) * 1);
 }
 
-.main .card:nth-child(3) {
+.main .drop:nth-child(3) {
   animation-delay: calc(var(--del) * 2);
 }
 
-.main .card:nth-child(4) {
+.main .drop:nth-child(4) {
   animation-delay: calc(var(--del) * 3);
 }
 
-.main .card:nth-child(5) {
+.main .drop:nth-child(5) {
   animation-delay: calc(var(--del) * 4);
 }
 
-.main .card:nth-child(6) {
+.main .drop:nth-child(6) {
   animation-delay: calc(var(--del) * 5);
 }
 
-.main .card:nth-child(7) {
+.main .drop:nth-child(7) {
   animation-delay: calc(var(--del) * 6);
+}
+
+.drop {
+  animation: dropIn 1s both;
 }
 
 @keyframes dropIn {
