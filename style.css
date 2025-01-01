@@ -43,6 +43,7 @@ body::before {
   left: 0;
 
   background: no-repeat center/cover url("assets/bg.jpg");
+  filter: blur(8px);
 }
 
 .pad {
