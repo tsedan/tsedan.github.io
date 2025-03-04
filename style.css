@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;800&display=swap');
+@font-face {
+  font-family: MainFont;
+  src: url(assets/font/Cormorant-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: MainFont;
+  src: url(assets/font/Cormorant-Italic-VariableFont_wght.ttf);
+  font-style: italic;
+}
 
 html {
   /* theme coloring */
@@ -13,7 +22,7 @@ html {
   --del: .2s;
 
   /* grid sizing */
-  --blk: 11;
+  --blk: 10;
   --grd: calc(var(--blk) * 1em);
 
   /* column count */
@@ -21,7 +30,7 @@ html {
 
   /* 1em = minimum dimension, divided by (space taken by grid plus padding) */
   font-size: calc(100vmin / (var(--blk) * var(--clm) + 2 * var(--mul)));
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: MainFont;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
