@@ -12,7 +12,7 @@
 html {
   /* theme coloring */
   color-scheme: dark;
-  --col: #f0f0f0;
+  --col: #ffffff;
 
   /* standard padding throughout page */
   --mul: 1.5;
@@ -31,6 +31,7 @@ html {
   /* 1em = minimum dimension, divided by (space taken by grid plus padding) */
   font-size: calc(100vmin / (var(--blk) * var(--clm) + 2 * var(--mul)));
   font-family: MainFont;
+  text-shadow: 0 0 6px #333;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,8 +52,8 @@ body::before {
   top: 0;
   left: 0;
 
-  background: no-repeat center/cover url("assets/bg.jpg");
-  filter: blur(8px);
+  background: no-repeat center/cover url("assets/bg.webp");
+  filter: blur(8px) brightness(0.5);
 }
 
 .pad {
@@ -117,12 +118,7 @@ body::before {
   }
 }
 
-.card {
-  background: rgba(0, 0, 0, 0.7);
-
-  border: .3em solid rgba(255, 255, 255, 0.04);
-  border-radius: .75em;
-
+.text-justified {
   text-align: justify;
 }
 
@@ -185,7 +181,6 @@ svg {
 .profile {
   height: 100%;
   border-radius: .75em;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .normal {
@@ -199,28 +194,72 @@ svg {
 .center-right {
   position: absolute;
   top: 50%;
-  right: var(--pad);
+  right: 0;
   transform: translate(0, -50%);
 }
 
 .bottom-left {
   position: absolute;
-  bottom: var(--pad);
-  left: var(--pad);
+  bottom: 0;
+  left: 0;
 }
 
 .bottom-right {
   position: absolute;
-  bottom: var(--pad);
-  right: var(--pad);
+  bottom: 0;
+  right: 0;
 }
 
 .top-right {
   position: absolute;
-  top: var(--pad);
-  right: var(--pad);
+  top: 0;
+  right: 0;
 }
 
 .small {
   width: 1em;
+}
+
+.glass-container {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  background: transparent;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.glass-overlay {
+  position: absolute;
+
+  inset: 0;
+  z-index: 1;
+
+  overflow: hidden;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+.glass-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.hover-scale {
+  transition: transform 0.15s ease-in-out;
+}
+
+.hover-scale:hover,
+.hover-scale:focus-visible {
+  transform: scale(1.03);
 }
